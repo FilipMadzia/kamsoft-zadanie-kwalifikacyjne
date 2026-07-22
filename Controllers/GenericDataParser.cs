@@ -20,7 +20,7 @@ namespace kamsoft_zadanie_kwalifikacyjne.Controllers
 
 			var response = new ParseContentResponse();
 
-			switch (payload.ContentType)
+			switch (payload.Type)
 			{
 				case ContentType.CSV:
 					return ProcessCsv(decodedContent);

@@ -15,7 +15,17 @@ namespace kamsoft_zadanie_kwalifikacyjne.Controllers
 		[Consumes("application/json")]
 		public ActionResult<ParseContentResponse> ParseContent([FromBody] ParseContentPayload payload)
 		{
-			byte[] data = Convert.FromBase64String(payload.Content);
+			byte[] data;
+
+			try
+			{
+				data = Convert.FromBase64String(payload.Content);
+			}
+			catch (FormatException)
+			{
+				return BadRequest("Invalid Base64 string.");
+			}
+
 			var decodedContent = System.Text.Encoding.UTF8.GetString(data);
 
 			var response = new ParseContentResponse();

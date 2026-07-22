@@ -1,0 +1,1 @@
+# kamsoft-zadanie-kwalifikacyjne

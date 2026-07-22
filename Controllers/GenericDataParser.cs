@@ -15,6 +15,9 @@ namespace kamsoft_zadanie_kwalifikacyjne.Controllers
 		[Consumes("application/json")]
 		public ActionResult<ParseContentResponse> ParseContent([FromBody] ParseContentPayload payload)
 		{
+			if (string.IsNullOrEmpty(payload.Content))
+				return BadRequest("Content cannot be null or empty.");
+
 			byte[] data;
 
 			try

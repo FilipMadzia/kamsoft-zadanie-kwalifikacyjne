@@ -5,6 +5,6 @@ namespace kamsoft_zadanie_kwalifikacyjne.Payloads
 	public class ParseContentPayload
 	{
 		public ContentType Type { get; set; }
-		public string Content { get; set; } = string.Empty;
+		public required string Content { get; set; }
 	}
 }

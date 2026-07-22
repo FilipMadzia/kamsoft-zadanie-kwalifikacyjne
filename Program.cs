@@ -10,7 +10,8 @@ builder.Services.AddControllers()
 	{
 		options.JsonSerializerOptions.Converters.Add(
 			new JsonStringEnumConverter());
-		options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+		options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+		options.JsonSerializerOptions.DictionaryKeyPolicy = JsonNamingPolicy.CamelCase;
 	});
 
 builder.Services.AddEndpointsApiExplorer();

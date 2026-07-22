@@ -36,9 +36,9 @@ namespace kamsoft_zadanie_kwalifikacyjne.Controllers
 			switch (payload.Type)
 			{
 				case ContentType.CSV:
-					return ProcessCsv(decodedContent);
+					return Ok(ProcessCsv(decodedContent));
 				case ContentType.INTERNAL_JSON:
-					return ProcessInternalJson(decodedContent);
+					return Ok(ProcessInternalJson(decodedContent));
 				default:
 					return BadRequest();
 			}
